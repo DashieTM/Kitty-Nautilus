@@ -25,18 +25,18 @@ class KittyExtension(Nautilus.MenuProvider, GObject.GObject):
 
     def get_file_items(self, window, files):
         item = Nautilus.MenuItem(
-            name="KittyOpen",
-            label="Ouvrir dans kitty",
-            tip="Ouvre le dossier sélectionné dans kitty"
+            name="TerminalOpen",
+            label="Open in Terminal",
+            tip="Open this folder in terminal."
         )
         item.connect('activate', self.launch_kitty, files)
         return [item]
 
     def get_background_items(self, window, file_):
         item = Nautilus.MenuItem(
-            name="KittyOpenBackGround",
-            label="Ouvrir dans Kitty",
-            tip="Ouvre le dossier courant dans kitty"
+            name="TerminalOpenBackGround",
+            label="Open in Terminal",
+            tip="Open this folder in terminal."
         )
         item.connect('activate', self.launch_kitty, [file_])
         return [item]
